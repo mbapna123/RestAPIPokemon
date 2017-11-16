@@ -20,8 +20,8 @@ public class ArticleDAO implements IArticleDAO {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Article> getAllArticles() {
-		String hql = "FROM pokedata as atcl ORDER BY atcl.id";
-		return (List<Article>) entityManager.createQuery(hql).getResultList();
+		String hql = "FROM Article as atcl ORDER BY atcl.id";
+		return (List<Article>) entityManager.createQuery(hql,Article.class).getResultList();
 	}	
 	@Override
 	public void addArticle(Article article) {
