@@ -23,10 +23,10 @@ import com.concretepage.service.IArticleService;
 public class ArticleController {
 	@Autowired
 	private IArticleService articleService;
-	@GetMapping("article/{id}")
-	public ResponseEntity<Article> getArticleById(@PathVariable("id") Integer id) {
-		Article article = articleService.getArticleById(id);
-		return new ResponseEntity<Article>(article, HttpStatus.OK);
+	@GetMapping("article/{pokemone}")
+	public ResponseEntity<List<Article>> getArticlesPoke(@PathVariable("pokemone") String pokemone) {
+		List<Article> list = articleService.getArticlesPoke(pokemone);
+		return new ResponseEntity<List<Article>>(list, HttpStatus.OK);
 	}
 	@GetMapping("articles")
 	public ResponseEntity<List<Article>> getAllArticles() {

@@ -21,6 +21,10 @@ public class ArticleService implements IArticleService {
 		return articleDAO.getAllArticles();
 	}
 	@Override
+	public List<Article> getArticlesPoke(String pokemone){
+		return articleDAO.getArticlesPoke(pokemone);
+	}
+	@Override
 	public synchronized boolean addArticle(Article article){
        if (articleDAO.articleExists(article.getPokemon(), article.getImagelink())) {
     	   return false;

@@ -24,6 +24,12 @@ public class ArticleDAO implements IArticleDAO {
 		return (List<Article>) entityManager.createQuery(hql,Article.class).getResultList();
 	}	
 	@Override
+	public List<Article> getArticlesPoke(String pokemone) {
+		char ch='"';
+		String hql = "FROM Article as atcl WHERE atcl.pokemon=" +"'"+pokemone+"'";
+		return (List<Article>) entityManager.createQuery(hql).getResultList();
+	}	
+	@Override
 	public void addArticle(Article article) {
 		entityManager.persist(article);
 	}

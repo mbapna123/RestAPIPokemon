@@ -3,6 +3,7 @@ import java.util.List;
 import com.concretepage.entity.Article;
 public interface IArticleDAO {
     List<Article> getAllArticles();
+    List<Article> getArticlesPoke(String pokemone);
     Article getArticleById(int id);
     void addArticle(Article article);
     void updateArticle(Article article);
