@@ -19,7 +19,7 @@ import com.concretepage.entity.Article;
 import com.concretepage.service.IArticleService;
 
 @Controller
-@RequestMapping("user")
+
 public class ArticleController {
 	@Autowired
 	private IArticleService articleService;
